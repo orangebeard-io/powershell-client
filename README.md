@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/orangebeard-io/powershell-client">
-    <img src="https://raw.githubusercontent.com/orangebeard-io/powershell-client/master/.github/logo.png" alt="Orangebeard.io Powershell Client" height="200">
+    <img src="https://raw.githubusercontent.com/orangebeard-io/powershell-client/master/.github/logo.svg" alt="Orangebeard.io Powershell Client" height="200">
   </a>
   <br>Orangebeard.io Powershell Client<br>
 </h1>
@@ -41,7 +41,6 @@ Set the following environment variables:
 $env:orangebeard_endpoint = "https://my.orangebeard.app";
 $env:orangebeard_project = "your-project";
 $env:orangebeard_token = "your-access-token";
-$env:orangebeard_testrun = "your-testrun-name";
 ```
 
 Start the client using: `$orangebeard = [OrangebeardClient]::new()`
