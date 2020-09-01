@@ -5,7 +5,7 @@
   <br>Orangebeard.io Powershell Client<br>
 </h1>
 
-<h4 align="center">A test output listener for Praegus Open Source Toolchain FitNesse tests.</h4>
+<h4 align="center">A client to report output from Powershell scripts to Orangebeard</h4>
 
 <!--<p align="center">
   <a href="https://repo.maven.apache.org/maven2/io/orangebeard/fitnesse-toolchain-listener/">
@@ -24,7 +24,7 @@
 
 <div align="center">
   <h4>
-    <a href="https://orangebeard.io">Orangebeard</a> |
+    <a href="https://orangebeard.io" target="_blank">Orangebeard</a> |
     <a href="#installation">Installation</a> |
     <a href="#configuration">Configuration</a>
   </h4>
