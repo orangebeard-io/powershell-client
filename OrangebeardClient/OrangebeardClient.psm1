@@ -150,7 +150,7 @@ class OrangebeardClient {
 
     [string] $projectApiUrl = $this.orangebeard_endpoint + "/api/" + $this.apiVersion + "/" + $this.orangebeard_project
 
-    reportStartTestRun([string]$description, [string]$name){
+    reportStartTestRun([string]$name, [string]$description){
         [string] $url = $this.projectApiUrl + "/launch"
         [StartTestRun] $startTestRun = [StartTestRun]::new([string]$description, [string]$name)
         
@@ -195,7 +195,6 @@ class OrangebeardClient {
         $fileName = [System.IO.Path]::GetFileName($file)
         $fileBytes = [System.IO.File]::ReadAllBytes($file);
         $fileEnc = [System.Text.Encoding]::GetEncoding('ISO-8859-1').GetString($fileBytes);
-        $fileMimeType = [System.Web.MimeMapping]::GetMimeMapping($file.FullName)
         $boundary = [System.Guid]::NewGuid().ToString(); 
         
         $jsonBody = $logItemWithAttachment | ConvertTo-Json
@@ -208,7 +207,7 @@ class OrangebeardClient {
             "[$jsonBody]",    
             "--$boundary",
             "Content-Disposition: form-data; name=`"file`"; filename=`"$filename`"",
-            "Content-Type: $fileMimeType$LF",
+            "Content-Type: application/octet-stream$LF",
             $fileEnc,
             "--$boundary--$LF" 
         ) -join $LF
